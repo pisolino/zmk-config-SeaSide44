@@ -1,7 +1,20 @@
 #include "SeaSide44.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
+};
+
+&zip_temp_layer {
+    excluded-positions = <
+        18 // J
+        19 // K
+        20 // L
+        22 // Z
+        31 // ,
+    >;
+
+    require-prior-idle-ms = <200>;
 };
 
 /* キーマトリクスの設定 */
@@ -23,6 +36,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+        input-processors = <&zip_temp_layer 4 10000>;
     };
 };
 
