@@ -15,7 +15,7 @@
         32 // ,
     >;
 
-    require-prior-idle-ms = <1000>;
+    require-prior-idle-ms = <500>;
 };
 
 /* キーマトリクスの設定 */
