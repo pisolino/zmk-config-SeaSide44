@@ -6,6 +6,7 @@
 };
 
 &zip_temp_layer {
+    require-prior-idle-ms = <500>;
     excluded-positions = <
         19 // J
         20 // K
@@ -14,8 +15,6 @@
         25 // Z
         32 // ,
     >;
-
-    require-prior-idle-ms = <500>;
 };
 
 /* キーマトリクスの設定 */
@@ -37,7 +36,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        input-processors = <&zip_temp_layer 4 4000>;
+        input-processors = <&zip_temp_layer 4 2000>;
     };
 };
 
